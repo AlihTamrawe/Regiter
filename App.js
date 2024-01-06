@@ -4,6 +4,9 @@ import { StyleSheet,Button, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>
+        Login Bage
+      </Text>
       <Button
       title='press me '
         style={styles.button}
@@ -28,5 +31,9 @@ const styles = StyleSheet.create({
     // borderRadius:50,
     // fontSize:40
     
+  },Text:{
+    margin:10,
+    textAlign:"center",
+    fontSize:20
   }
-});
+}); 
