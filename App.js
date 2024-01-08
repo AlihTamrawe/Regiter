@@ -1,19 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet,Button, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import AuthStack from './navigationss/AuthStack';
 
 export default function App() {
+  
   return (
-    <View style={styles.container}>
-      <Text>
-        Login Bage
-      </Text>
-      <Button
-      title='press me '
-        style={styles.button}
-        onPress={()=>{alert('yes hit')}}
-      >  </Button>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+      <AuthStack />
+
+   </NavigationContainer>
   );
 }
 
