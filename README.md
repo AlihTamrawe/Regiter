@@ -1,3 +1,3 @@
 #Register anf d login via React native 
-![alt text](https://github.com/AlihTamrawe/Regiter/blob/master/assets/ui.jpg?raw=true)
 
+<img src="https://github.com/AlihTamrawe/Regiter/blob/master/assets/ui.jpg" width="100" height="100">
