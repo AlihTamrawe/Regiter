@@ -5,6 +5,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import GoogleSvg from '../assets/google.svg'
+import FacebookSvg from '../assets/facebook.svg'
+
 
 export default function LoginScreen() {
   return (
@@ -39,6 +41,7 @@ export default function LoginScreen() {
     
       <TouchableOpacity style={{borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}}>
          <GoogleSvg height={24} width={24}></GoogleSvg> 
+         <FacebookSvg  height={24} width={24}></FacebookSvg>
       </TouchableOpacity>
     </SafeAreaView>
   )
