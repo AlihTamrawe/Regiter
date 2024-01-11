@@ -30,8 +30,15 @@ export default function LoginScreen() {
       <TouchableOpacity  onPress={()=>{}} style={{alignItems:'center',backgroundColor:'#AD40AF',padding:20,borderRadius:10,marginBottom:30}}>
         <Text style={{fontWeight:'700',fontSize:16,color:'#fff'}} >Login</Text>
        </TouchableOpacity>
+       
       </View>
+      <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>
+        Or, login with
+      </Text>
     
+      <TouchableOpacity>
+        {/* <Google></Google> */}
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }
