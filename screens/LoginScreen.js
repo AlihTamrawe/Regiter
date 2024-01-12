@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet,Button, Text, View,TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet,Button, Text, View,TextInput, TouchableOpacity,Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -7,10 +7,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
  import Svg, { Path } from "react-native-svg"
 
-
-export default function LoginScreen() {
+ export default function LoginScreen() {
   return (
-    <SafeAreaView style={{flex:1,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
+    <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
+      <View style={{ flex:1 ,justifyContent:'center',width:480,height:200}}>
+        <Image 
+                  source={require('../assets/car.png')}
+         style={{ width:"60%", height:"60%" }}
+        ></Image>
+       </View>
       <View>
       <Text style={{fontSize:50}}>Login Screen</Text>
       </View>
