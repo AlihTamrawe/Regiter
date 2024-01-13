@@ -5,17 +5,17 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
- import Svg, { Path } from "react-native-svg"
+import Svg, { Path } from "react-native-svg"
 
- export default function LoginScreen() {
+export default function LoginScreen() {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
-      <View style={{ flex:1 ,justifyContent:'center',width:480,height:200}}>
+      <View style={{ flex:1 ,justifyContent:'center',width:48,height:200}}>
         <Image 
                   source={require('../assets/car.png')}
-         style={{ width:"60%", height:"60%" }}
+        style={{ width:"60%", height:"60%" }}
         ></Image>
-       </View>
+      </View>
       <View>
       <Text style={{fontSize:50}}>Login Screen</Text>
       </View>
@@ -70,6 +70,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
       </View>
             </TouchableOpacity>
             </View>
+          <View style={{flexDirection:'column',alignItems:'center',marginBottom:30}}>
+            <Text>New to the app?</Text>
+            <TouchableOpacity onPress={()=>{}}>
+              <Text style={{color:'#AD40AF',fontWeight:'700',}}>Register</Text>
+
+            </TouchableOpacity>
+          </View>
     </SafeAreaView>
   )
 }
