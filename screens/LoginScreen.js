@@ -6,8 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Svg, { Path } from "react-native-svg"
-
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
       <View style={{ flex:1 ,justifyContent:'center',width:480,height:200}}>
@@ -72,7 +71,7 @@ export default function LoginScreen() {
             </View>
           <View style={{flexDirection:'column',alignItems:'center',marginBottom:30}}>
             <Text>New to the app?</Text>
-            <TouchableOpacity onPress={()=>{}}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Register')}>
               <Text style={{color:'#AD40AF',fontWeight:'700',}}>Register</Text>
 
             </TouchableOpacity>
