@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Svg, { Path } from "react-native-svg"
+import InputField from '../component/InputField';
 export default function RegisterScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
@@ -22,6 +23,18 @@ export default function RegisterScreen({navigation}) {
         <MaterialIcons name='alternate-email' size={20} color='#066'/>
         <TextInput placeholder='Email ID'style={{ fontWeight:'500',height:20,width:'auto'}}/>
     </View>
+
+    <InputField
+      label={'Full name'}
+      icon={
+      <Ionicons
+      name='person-outline'
+      size={20}
+      color='#066'
+      style={{marginRight:5}}/>}
+
+    />
+    
     <View style={{ color:'#666',flexDirection:'row', marginRight:5,marginBottom:5,borderBottomWidth:1, justifyContent:'center', padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
     <Ionicons name='ios-lock-closed-outline' size={20} color='#166'/>
     <TextInput
