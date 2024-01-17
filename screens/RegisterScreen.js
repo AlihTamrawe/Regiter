@@ -7,6 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Svg, { Path } from "react-native-svg"
 import InputField from '../component/InputField';
+import CustomButton from '../component/CustomButton';
 export default function RegisterScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
@@ -19,10 +20,23 @@ export default function RegisterScreen({navigation}) {
     <View>
     <Text style={{fontSize:50}}>Register Screen</Text>
     </View>
-    <View  style={{ flexDirection:'row',alignItems:'center',borderBottomColor:'#ccc',paddingHorizontal:25, marginRight:5,marginBottom:5, padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
-        <MaterialIcons name='alternate-email' size={20} color='#066'/>
+    {/* <View  style={{ flexDirection:'row',alignItems:'center',borderBottomColor:'#ccc',paddingHorizontal:25, marginRight:5,marginBottom:5, padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
+        <MaterialIcons name='alternate-email' size={20} />
         <TextInput placeholder='Email ID'style={{ fontWeight:'500',height:20,width:'auto'}}/>
-    </View>
+    </View> */}
+    <InputField
+      label={'Email ID'}
+      icon={
+      <MaterialIcons 
+        name="alternate-email" 
+        size={20}
+        color='#066'
+        style={{marginRight:5}}
+
+       />}
+        keyboardType='email-address'
+    
+    />
 
     <InputField
       label={'Full name'}
@@ -32,10 +46,33 @@ export default function RegisterScreen({navigation}) {
       size={20}
       color='#066'
       style={{marginRight:5}}/>}
-
+      
     />
     
-    <View style={{ color:'#666',flexDirection:'row', marginRight:5,marginBottom:5,borderBottomWidth:1, justifyContent:'center', padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
+    <InputField
+      label={'Password'}
+      icon={
+      <Ionicons
+      name='ios-lock-closed-outline'
+      size={20}
+      color='#166'
+      style={{marginRight:5}}/>}
+      inputType="password"
+    />
+
+    <InputField
+      label={'Confirm Password'}
+      icon={
+      <Ionicons
+      name='ios-lock-closed-outline'
+      size={20}
+      color='#166'
+      style={{marginRight:5}}/>}
+      inputType="password"
+    />
+
+    {/* old code */}
+     {/* <View style={{ color:'#666',flexDirection:'row', marginRight:5,marginBottom:5,borderBottomWidth:1, justifyContent:'center', padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
     <Ionicons name='ios-lock-closed-outline' size={20} color='#166'/>
     <TextInput
       placeholder='password ID' 
@@ -45,13 +82,21 @@ export default function RegisterScreen({navigation}) {
      <TouchableOpacity onPress={()=>{}} >
       <Text style={{fontWeight:'700',fontSize:16,color:'#AD40AF'}} >forget</Text>
      </TouchableOpacity>
-    </View>
+    </View> 
+
+   
     <View>
     <TouchableOpacity  onPress={()=>{}} style={{alignItems:'center',backgroundColor:'#AD40AF',padding:20,borderRadius:10,marginBottom:30}}>
-      <Text style={{fontWeight:'700',fontSize:16,color:'#fff'}} >Login</Text>
+      <Text style={{fontWeight:'700',fontSize:16,color:'#fff'}} >Register</Text>
      </TouchableOpacity>
-     
-    </View>
+    </View> */}
+
+          {/* New Code */}
+    <CustomButton
+      lable="Register"
+      onPress={()=>{}}
+      
+    />
     <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>
       Or, Register with
     </Text>

@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Svg, { Path } from "react-native-svg"
+import CustomButton from '../component/CustomButton';
 export default function LoginScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
@@ -33,12 +34,18 @@ export default function LoginScreen({navigation}) {
         <Text style={{fontWeight:'700',fontSize:16,color:'#AD40AF'}} >forget</Text>
        </TouchableOpacity>
       </View>
-      <View>
+      {/* <View>
       <TouchableOpacity  onPress={()=>{}} style={{alignItems:'center',backgroundColor:'#AD40AF',padding:20,borderRadius:10,marginBottom:30}}>
         <Text style={{fontWeight:'700',fontSize:16,color:'#fff'}} >Login</Text>
        </TouchableOpacity>
-       
-      </View>
+       </View> */}
+
+      <CustomButton
+      lable="Login"
+      onPress={()=>{}}
+      
+    />
+     
       <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>
         Or, login with
       </Text>
