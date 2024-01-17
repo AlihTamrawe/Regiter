@@ -2,11 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet,Button, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './navigationss/AuthStack';
+import AppStack from './navigationss/AppStack';
 
 export default function App() {
   
   return (
    <NavigationContainer>
+      <AppStack/>
       <AuthStack />
 
    </NavigationContainer>

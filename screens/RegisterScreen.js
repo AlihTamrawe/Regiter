@@ -1,5 +1,14 @@
 import React from 'react'
-import { StyleSheet,Button, Text, View,TextInput, TouchableOpacity,Image } from 'react-native';
+import { 
+  StyleSheet
+  ,Button
+  , Text
+  , View
+  ,TextInput
+  , TouchableOpacity
+  ,Image
+  ,ScrollView
+ } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -11,6 +20,7 @@ import CustomButton from '../component/CustomButton';
 export default function RegisterScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
+          <ScrollView showsVerticalScrollIndicator={false} style={{paddingHorizontal:'25'}} >
     <View style={{ flex:1 ,justifyContent:'center',width:480,height:200}}>
       <Image 
                 source={require('../assets/car.png')}
@@ -58,6 +68,8 @@ export default function RegisterScreen({navigation}) {
       color='#166'
       style={{marginRight:5}}/>}
       inputType="password"
+      feildButtonFunction={()=>{} }
+      feildButtonlable="see/show"
     />
 
     <InputField
@@ -69,6 +81,8 @@ export default function RegisterScreen({navigation}) {
       color='#166'
       style={{marginRight:5}}/>}
       inputType="password"
+      feildButtonFunction={()=>{} }
+      feildButtonlable="see/show"
     />
 
     {/* old code */}
@@ -95,12 +109,12 @@ export default function RegisterScreen({navigation}) {
     <CustomButton
       lable="Register"
       onPress={()=>{}}
-      
+
     />
     <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>
       Or, Register with
     </Text>
-    <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between' }}>
+    <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',  alignContent:'center',justifyContent:'center'}}>
 
     <TouchableOpacity style={{margin:5,display:'flex',flexDirection:'row',justifyContent:'space-between',alignContent:'space-between',borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}}>
     
@@ -134,6 +148,7 @@ export default function RegisterScreen({navigation}) {
 
           </TouchableOpacity>
         </View>
+        </ScrollView>
   </SafeAreaView>
   )
 }

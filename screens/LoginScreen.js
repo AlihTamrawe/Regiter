@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet,Button, Text, View,TextInput, TouchableOpacity,Image } from 'react-native';
+import { StyleSheet,Button, Text, View,TextInput, TouchableOpacity,Image,ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -7,9 +7,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Svg, { Path } from "react-native-svg"
 import CustomButton from '../component/CustomButton';
+import InputField from '../component/InputField';
 export default function LoginScreen({navigation}) {
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
+          <ScrollView showsVerticalScrollIndicator={false} style={{paddingHorizontal:'25'}} >
       <View style={{ flex:1 ,justifyContent:'center',width:480,height:200}}>
         <Image 
                   source={require('../assets/car.png')}
@@ -19,7 +21,7 @@ export default function LoginScreen({navigation}) {
       <View>
       <Text style={{fontSize:50}}>Login Screen</Text>
       </View>
-      <View  style={{ flexDirection:'row',alignItems:'center',borderBottomColor:'#ccc',paddingHorizontal:25, marginRight:5,marginBottom:5, padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
+      {/* <View  style={{ flexDirection:'row',alignItems:'center',borderBottomColor:'#ccc',paddingHorizontal:25, marginRight:5,marginBottom:5, padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
           <MaterialIcons name='alternate-email' size={20} color='#066'/>
           <TextInput placeholder='Email ID'style={{ fontWeight:'500',height:20,width:'auto'}}/>
       </View>
@@ -33,7 +35,48 @@ export default function LoginScreen({navigation}) {
        <TouchableOpacity onPress={()=>{}} >
         <Text style={{fontWeight:'700',fontSize:16,color:'#AD40AF'}} >forget</Text>
        </TouchableOpacity>
-      </View>
+      </View> */}
+
+<InputField
+      label={'Email ID'}
+      icon={
+      <MaterialIcons 
+        name="alternate-email" 
+        size={20}
+        color='#066'
+        style={{marginRight:5}}
+
+       />}
+        keyboardType='email-address'
+    
+    />
+
+    <InputField
+      label={'Full name'}
+      icon={
+      <Ionicons
+      name='person-outline'
+      size={20}
+      color='#066'
+      style={{marginRight:5}}/>}
+      
+    />
+    
+    <InputField
+      label={'Password'}
+      icon={
+      <Ionicons
+      name='ios-lock-closed-outline'
+      size={20}
+      color='#166'
+      style={{marginRight:5}}/>}
+      inputType="password"
+      feildButtonFunction={()=>{} }
+      feildButtonlable="Forget"
+    />
+
+    
+
       {/* <View>
       <TouchableOpacity  onPress={()=>{}} style={{alignItems:'center',backgroundColor:'#AD40AF',padding:20,borderRadius:10,marginBottom:30}}>
         <Text style={{fontWeight:'700',fontSize:16,color:'#fff'}} >Login</Text>
@@ -49,7 +92,7 @@ export default function LoginScreen({navigation}) {
       <Text style={{textAlign:'center',color:'#666',marginBottom:30}}>
         Or, login with
       </Text>
-      <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between' }}>
+      <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',  alignContent:'center',justifyContent:'center'}}>
 
       <TouchableOpacity style={{margin:5,display:'flex',flexDirection:'row',justifyContent:'space-between',alignContent:'space-between',borderColor:'#ddd',borderWidth:2,borderRadius:10,paddingHorizontal:30,paddingVertical:10}}>
       
@@ -83,6 +126,7 @@ export default function LoginScreen({navigation}) {
 
             </TouchableOpacity>
           </View>
+          </ScrollView>
     </SafeAreaView>
   )
 }
