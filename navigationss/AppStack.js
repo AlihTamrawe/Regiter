@@ -9,7 +9,6 @@ import MessagesScreen from '../screens/MessagesScreen';
 import MomentsScreen from '../screens/MomentsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-import TabNavigator from './TabNavigator';
 
 const Drawer = createDrawerNavigator();
 

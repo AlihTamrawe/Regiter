@@ -8,15 +8,15 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
-import Feather from 'react-native-vector-icons/Feather';
+// import Carousel from 'react-native-snap-carousel';
+// import Feather from 'react-native-vector-icons/Feather';
 
-import BannerSlider from '../components/BannerSlider';
-import {windowWidth} from '../utils/Dimensions';
+// import BannerSlider from '../components/BannerSlider';
+// import {windowWidth} from '../utils/Dimensions';
 
 // import {freeGames, paidGames, sliderData} from '../model/data';
-import CustomSwitch from '../components/CustomSwitch';
-import ListItem from '../components/ListItem';
+// import CustomSwitch from '../components/CustomSwitch';
+// import ListItem from '../components/ListItem';
 
 export default function HomeScreen({navigation}) {
   const [gamesTab, setGamesTab] = useState(1);
@@ -43,7 +43,7 @@ export default function HomeScreen({navigation}) {
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
-            source={require('../assets/images/user-profile.jpg')}
+            source={require('../assets/car.png')}
               style={{width: 35, height: 35}}
               imageStyle={{borderRadius: 25}}
             />
@@ -82,7 +82,7 @@ export default function HomeScreen({navigation}) {
           </TouchableOpacity>
         </View>
 
-        <Carousel
+        {/* <Carousel
           ref={c => {
             this._carousel = c;
           }}
@@ -91,15 +91,15 @@ export default function HomeScreen({navigation}) {
           sliderWidth={windowWidth - 40}
           itemWidth={300}
           loop={true}
-        />
+        /> */}
 
         <View style={{marginVertical: 20}}>
-          <CustomSwitch
+          {/* <CustomSwitch
             selectionMode={1}
             option1="Free to play"
             option2="Paid games"
             onSelectSwitch={onSelectSwitch}
-          />
+          /> */}
         </View>
 
         {/* {gamesTab == 1 &&
