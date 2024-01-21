@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { 
   StyleSheet
   ,Button
@@ -9,7 +9,8 @@ import {
   ,Image
   ,ScrollView
  } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+ import DatePicker from 'react-native-date-picker'
+ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -17,7 +18,18 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Svg, { Path } from "react-native-svg"
 import InputField from '../component/InputField';
 import CustomButton from '../component/CustomButton';
+
 export default function RegisterScreen({navigation}) {
+  const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState(false)
+  const [show, setShow] = useState(false);
+  
+const onChange = (event, selectedDate) => {
+    console.log('Seleeected', selectedDate);   
+      setShow(false);
+   
+  };
+
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
           <ScrollView showsVerticalScrollIndicator={false} style={{paddingHorizontal:'25'}} >
@@ -72,6 +84,7 @@ export default function RegisterScreen({navigation}) {
       feildButtonlable="see/show"
     />
 
+  
     <InputField
       label={'Confirm Password'}
       icon={
@@ -84,7 +97,44 @@ export default function RegisterScreen({navigation}) {
       feildButtonFunction={()=>{} }
       feildButtonlable="see/show"
     />
+  <View
+      style={
+        {
+          flexDirection:'row',
+          borderBottomWidth:1,
+          borderBottomColor:'#ccc',
+          paddingBottom:8,
+          marginBottom:30
 
+        }
+      }
+    >
+     
+      <Ionicons
+      name='calendar-outline'
+      size={20}
+      color='#666'
+      style={{marginRight:5}}/>
+      <TouchableOpacity onPress={()=>{setOpen(true)}}>
+        <Text  style={{color:'#666',marginLeft:5,marginTop:5}}>Date of Birth</Text>
+
+      </TouchableOpacity>
+      </View>
+      
+    
+      <DatePicker
+        modal
+        open={open}
+        date={date}
+        onConfirm={(date) => {
+          setOpen(false)
+          setDate(date)
+        }}
+        onCancel={() => {
+          setOpen(false)
+        }}
+      />
+          
     {/* old code */}
      {/* <View style={{ color:'#666',flexDirection:'row', marginRight:5,marginBottom:5,borderBottomWidth:1, justifyContent:'center', padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
     <Ionicons name='ios-lock-closed-outline' size={20} color='#166'/>
