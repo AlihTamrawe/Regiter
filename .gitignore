@@ -194,3 +194,4 @@ vendor/
 .circleci/generated_config.yml
 .circleci/storage
 .yarn.lock
+android
