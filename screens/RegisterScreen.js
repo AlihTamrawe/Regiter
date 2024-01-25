@@ -9,7 +9,7 @@ import {
   ,Image
   ,ScrollView
  } from 'react-native';
- import DatePicker from 'react-native-date-picker'
+ import DateTimePicker from '@react-native-community/datetimepicker';
  import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -20,15 +20,31 @@ import InputField from '../component/InputField';
 import CustomButton from '../component/CustomButton';
 
 export default function RegisterScreen({navigation}) {
-  const [date, setDate] = useState(new Date())
-  const [open, setOpen] = useState(false)
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  
-const onChange = (event, selectedDate) => {
-    console.log('Seleeected', selectedDate);   
-      setShow(false);
-   
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setDate(currentDate);
   };
+
+  const showMode = (currentMode) => {
+    DateTimePicker.open({
+      value: date,
+      onChange,
+      mode: currentMode,
+      is24Hour: true,
+    });
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const showTimepicker = () => {
+    showMode('time');
+  };
+
 
   return (
     <SafeAreaView style={{flex:4,width:'100%', justifyContent:'center',backgroundColor:'#0C8BA50',margin:5 ,padding:50, transform:[{rotate:'1deg'}]}}>
@@ -98,8 +114,10 @@ const onChange = (event, selectedDate) => {
       feildButtonlable="see/show"
     />
   <View
+        size={20}
       style={
         {
+          color:'#166',
           flexDirection:'row',
           borderBottomWidth:1,
           borderBottomColor:'#ccc',
@@ -113,7 +131,7 @@ const onChange = (event, selectedDate) => {
       <Ionicons
       name='calendar-outline'
       size={20}
-      color='#666'
+      color='#066'
       style={{marginRight:5}}/>
       <TouchableOpacity onPress={()=>{setOpen(true)}}>
         <Text  style={{color:'#666',marginLeft:5,marginTop:5}}>Date of Birth</Text>
@@ -121,19 +139,18 @@ const onChange = (event, selectedDate) => {
       </TouchableOpacity>
       </View>
       
-    
-      <DatePicker
-        modal
-        open={open}
-        date={date}
-        onConfirm={(date) => {
-          setOpen(false)
-          setDate(date)
-        }}
-        onCancel={() => {
-          setOpen(false)
-        }}
-      />
+      <Button onPress={showDatepicker} title="Show date picker!" />
+      <Button onPress={showTimepicker} title="Show time picker!" />
+      <Text>selected: {date.toLocaleString()}</Text>
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={true}
+          onChange={onChange}
+        />
+      )}
           
     {/* old code */}
      {/* <View style={{ color:'#666',flexDirection:'row', marginRight:5,marginBottom:5,borderBottomWidth:1, justifyContent:'center', padding:15,width:400, flexDirection:'row', alignContent:'space-around',backgroundColor:'white' ,width:'auto', transform:[{rotate:'-1deg'}]}} >
